@@ -10,3 +10,8 @@
 [ [HW02Tests.hs](https://github.com/RahnX/UPENN-Haskell-2015/blob/master/Homework_2/HW02Tests.hs), [Testing.hs](https://github.com/RahnX/UPENN-Haskell-2015/blob/master/Homework_2/Testing.hs) ]
 
 [HW02.hs](https://github.com/RahnX/UPENN-Haskell-2015/blob/master/Homework_2/HW02.hs)
+
+###Homework 3
+[ [Fun.hs](https://github.com/RahnX/UPENN-Haskell-2015/blob/master/Homework_3/Fun.hs) ]
+
+[HW03.hs](https://github.com/RahnX/UPENN-Haskell-2015/blob/master/Homework_3/HW03.hs)
