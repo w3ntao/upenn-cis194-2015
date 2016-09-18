@@ -64,7 +64,7 @@ filterCodes move = filter (isConsistent move)
 -- Exercise 6 -----------------------------------------
 
 allCodes :: Int -> [Code]
-allCodes 1 = map (\x -> [x]) colors
+allCodes 1 = map (:[]) colors
 allCodes n = concatMap (\x -> [x ++ [c] | c <- colors]) (allCodes (n-1))
 
 -- Exercise 7 -----------------------------------------
