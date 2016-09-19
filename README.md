@@ -15,3 +15,8 @@
 [ [Fun.hs](https://github.com/RahnX/UPENN-Haskell-2015/blob/master/Homework_3/Fun.hs) ]
 
 [HW03.hs](https://github.com/RahnX/UPENN-Haskell-2015/blob/master/Homework_3/HW03.hs)
+
+###Homework 4
+[ [Lec04.hs](https://github.com/RahnX/UPENN-Haskell-2015/blob/master/Homework_4/Lec04.hs) ]
+
+[HW04.hs](https://github.com/RahnX/UPENN-Haskell-2015/blob/master/Homework_4/HW04.hs)
