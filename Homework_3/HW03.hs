@@ -56,8 +56,8 @@ evalE state (Op lExp binOp rExp) = trans binOp (evalE state lExp) (evalE state r
                                          trans Lt  = (boolToInt .) . (<)
                                          trans Le  = (boolToInt .) . (<=)
                                          trans Eql = (boolToInt .) . (==)
-                                         boolToInt True  = 1
-                                         boolToInt _     = 0
+                                         boolToInt False = 0
+                                         boolToInt _     = 1
 
 -- Exercise 3 -----------------------------------------
 
@@ -66,7 +66,7 @@ data DietStatement = DAssign String Expression
                    | DWhile Expression DietStatement
                    | DSequence DietStatement DietStatement
                    | DSkip
-                     deriving (Show, Eq)
+                   deriving (Show, Eq)
 
 desugar :: Statement -> DietStatement
 desugar (Assign x exp) = DAssign x exp
