@@ -20,3 +20,10 @@
 [ [Lec04.hs](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_4/Lec04.hs) ]
 
 [HW04.hs](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_4/HW04.hs)
+
+###Homework 5
+[ [Lec05.hs](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/Lec05.hs),  [Parser.hs](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/Parser.hs) ]
+
+[ [transactions.json](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/transactions.json), [new-transactions.json](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/new-transactions.json), [new-ids.json](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/new-ids.json), [victims.json.enc](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/victims.json.enc), [dog-original.jpg](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/dog-original.jpg), [dog.jpg](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/dog.jpg) ]
+
+[HW05.hs](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/HW05.hs)
