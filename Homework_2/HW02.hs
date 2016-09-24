@@ -23,17 +23,17 @@ colors = [Red, Green, Blue, Yellow, Orange, Purple]
 
 -- Get the number of exact matches between the actual code and the guess
 exactMatches :: Code -> Code -> Int
-exactMatches _       []      = 0
-exactMatches []      _       = 0
-exactMatches (x: xs) (y: ys) = (if x == y then 1 else 0) + exactMatches xs ys
+exactMatches _        []       = 0
+exactMatches []       _        = 0
+exactMatches (x : xs) (y : ys) = (if x == y then 1 else 0) + exactMatches xs ys
 
 -- Exercise 2 -----------------------------------------
 
 -- For each peg in xs, count how many times is occurs in ys
 countColors :: Code -> [Int]
 countColors xs = countIter xs colors
-                 where countIter _  []      = []
-                       countIter ps (c: ls) = [count c ps] ++ countIter ps ls
+                 where countIter _  []       = []
+                       countIter ps (c : ls) = [count c ps] ++ countIter ps ls
                        count x = length . filter (== x)
 
 -- Count number of matches between the actual code and the guess
