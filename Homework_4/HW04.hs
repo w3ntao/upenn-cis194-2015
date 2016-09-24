@@ -11,10 +11,10 @@ x = P [0, 1]
 -- Exercise 2 ----------------------------------------
 
 instance (Num a, Eq a) => Eq (Poly a) where
-    P []      == P []      = True
-    P []      == _         = False
-    _         == P []      = False
-    P (w: ws) == P (z: zs) = w == z && P ws == P zs
+    P []       == P []       = True
+    P []       == _          = False
+    _          == P []       = False
+    P (w : ws) == P (z : zs) = w == z && P ws == P zs
 
     P w /= P z = not $ P w == P z
 
@@ -24,8 +24,8 @@ instance (Num a, Eq a, Show a) => Show (Poly a) where
     show (P poly) = if poly == replicate (length poly) 0
                         then "0"
                         else insert " + " (breakP (P (reverse poly)))
-                    where breakP (P [])      = []
-                          breakP (P (y: ys)) = (showF y (length ys)) ++ breakP (P ys)
+                    where breakP (P [])       = []
+                          breakP (P (y : ys)) = (showF y (length ys)) ++ breakP (P ys)
                           showF base n | base == 0           = []
                                        | base == 1 && n == 0 = ["1"]
                                        | otherwise           = [showBase base ++ showExp n]
@@ -49,8 +49,8 @@ plus (P w) (P z) = P (map (\(s, t) -> s + t) $ zip long (short ++ repeat 0))
 -- Exercise 5 -----------------------------------------
 
 times :: Num a => Poly a -> Poly a -> Poly a
-times (P [])      (P _)  = P [0]
-times (P (w: ws)) (P zs) = P (map (*w) zs) + times (P ws) (P ([0] ++ zs))
+times (P [])       (P _)  = P [0]
+times (P (w : ws)) (P zs) = P (map (*w) zs) + times (P ws) (P ([0] ++ zs))
 
 -- Exercise 6 -----------------------------------------
 
@@ -66,8 +66,8 @@ instance Num a => Num (Poly a) where
 -- Exercise 7 -----------------------------------------
 
 applyP :: Num a => Poly a -> a -> a
-applyP (P [])      _ = 0
-applyP (P (y: ys)) w = y + w * (if null ys then 0 else applyP (P ys) w)
+applyP (P [])       _ = 0
+applyP (P (y : ys)) w = y + w * (if null ys then 0 else applyP (P ys) w)
 
 -- Exercise 8 -----------------------------------------
 
@@ -79,5 +79,5 @@ class Num a => Differentiable a where
 -- Exercise 9 -----------------------------------------
 
 instance Num a => Differentiable (Poly a) where
-    deriv (P [])      = P [0]
-    deriv (P (_: ys)) = P (map (\(w, z) -> w*z) (zip ys (map fromInteger [1..])))
+    deriv (P [])       = P [0]
+    deriv (P (_ : ys)) = P (map (\(w, z) -> w*z) (zip ys (map fromInteger [1..])))
