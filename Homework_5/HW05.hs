@@ -17,21 +17,18 @@ import Data.List
 
 -- Exercise 1 -----------------------------------------
 
-mapXOR :: [(Word8, Word8)] -> [Word8]
-mapXOR = map (\(x, y) -> xor x y)
-
 getSecret :: FilePath -> FilePath -> IO ByteString
 getSecret fileNameX fileNameY = do
     fileX <- BS.readFile fileNameX
     fileY <- BS.readFile fileNameY
-    return . BS.pack . filter (/= 0) . mapXOR $ zip (BS.unpack fileX) (BS.unpack fileY)
+    return . BS.pack . filter (/= 0) $ zipWith xor (BS.unpack fileX) (BS.unpack fileY)
 
 -- Exercise 2 -----------------------------------------
 
 decryptWithKey :: ByteString -> FilePath -> IO ()
 decryptWithKey key fileName = do
     file <- BS.readFile (fileName ++ ".enc")
-    BS.writeFile fileName (trim . encode . map w2c . mapXOR $ zip (BS.unpack file) rKey)
+    BS.writeFile fileName (trim . encode . map w2c $ zipWith xor (BS.unpack file) rKey)
     where rKey = (concat . repeat . BS.unpack) key
           trim = sToBS . filter f . tail . init . bsToS
                  where f x = x /= 'n' && x /= '\\'
