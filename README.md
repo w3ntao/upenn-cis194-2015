@@ -27,3 +27,6 @@
 [ [transactions.json](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/transactions.json), [new-transactions.json](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/new-transactions.json), [new-ids.json](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/new-ids.json), [victims.json.enc](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/victims.json.enc), [dog-original.jpg](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/dog-original.jpg), [dog.jpg](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/dog.jpg) ]
 
 [HW05.hs](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_5/HW05.hs)
+
+###Homework 6
+[HW06.hs](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_6/HW06.hs)
