@@ -21,7 +21,7 @@ instance (Num a, Eq a) => Eq (Poly a) where
 -- Exercise 3 -----------------------------------------
 
 instance (Num a, Eq a, Show a) => Show (Poly a) where
-    show (P poly) = if poly == replicate (length poly) 0
+    show (P poly) = if all (==0) poly
                         then "0"
                         else insert " + " (breakP (P (reverse poly)))
                     where breakP (P [])       = []
@@ -35,13 +35,12 @@ instance (Num a, Eq a, Show a) => Show (Poly a) where
                           showExp n | n == 0    = ""
                                     | n == 1    = "x"
                                     | otherwise = "x^" ++ show n
-
-                          insert slice ls = (drop (length slice)) . concat . map (\(w, z) -> w ++ z) $ zip (repeat slice) ls
+                          insert slice = (drop (length slice)) . concat . zipWith (++) (repeat slice)
 
 -- Exercise 4 -----------------------------------------
 
 plus :: Num a => Poly a -> Poly a -> Poly a
-plus (P w) (P z) = P (map (\(s, t) -> s + t) $ zip long (short ++ repeat 0))
+plus (P w) (P z) = P (zipWith (+) long (short ++ repeat 0))
                    where (short, long) = if length w > length z
                                              then (z, w)
                                              else (w, z)
@@ -80,4 +79,4 @@ class Num a => Differentiable a where
 
 instance Num a => Differentiable (Poly a) where
     deriv (P [])       = P [0]
-    deriv (P (_ : ys)) = P (map (\(w, z) -> w*z) (zip ys (map fromInteger [1..])))
+    deriv (P (_ : ys)) = P (zipWith (*) ys (map fromInteger [1..]))
