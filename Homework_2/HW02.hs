@@ -70,7 +70,10 @@ allCodes n = concatMap (\x -> [x ++ [c] | c <- colors]) (allCodes (n-1))
 -- Exercise 7 -----------------------------------------
 
 solve :: Code -> [Move]
-solve = undefined
+solve secret = go (allCodes (length secret)) []
+    where go [] acc = reverse acc
+          go (g : guesses) acc = go (filterCodes move guesses) (move : acc)
+                                 where move = getMove secret g
 
 -- Bonus ----------------------------------------------
 
