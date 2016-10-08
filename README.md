@@ -35,3 +35,6 @@
 [ [Cards.hs](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_7/Cards.hs) ]
 
 [HW07.hs](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_7/HW07.hs)
+
+###Homework 8
+[HW08.hs](https://github.com/RahnX/UPenn-CIS-194-2015/blob/master/Homework_8/HW08.hs)
