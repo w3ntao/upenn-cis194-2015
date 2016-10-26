@@ -71,9 +71,9 @@ allCodes n = concatMap (\x -> [x ++ [c] | c <- colors]) (allCodes (n-1))
 
 solve :: Code -> [Move]
 solve secret = go (allCodes (length secret)) []
-    where go [] acc = reverse acc
-          go (g : guesses) acc = go (filterCodes move guesses) (move : acc)
-                                 where move = getMove secret g
+               where go [] acc = reverse acc
+                     go (g : guesses) acc = go (filterCodes move guesses) (move : acc)
+                                            where move = getMove secret g
 
 -- Bonus ----------------------------------------------
 
